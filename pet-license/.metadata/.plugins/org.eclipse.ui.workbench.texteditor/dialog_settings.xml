@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="registration-data"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="registration-data"/>
+			<item value="smsCallService"/>
+			<item value="search_fee"/>
+			<item value="search-fee"/>
+			<item value="regis"/>
+			<item value="JSON"/>
+			<item value="JSONParser"/>
+			<item value="nameofdog"/>
+			<item value="name"/>
+			<item value="DATE_FORMAT"/>
+			<item value="spring-boot-starter-test"/>
+			<item value="spring-boot-starter"/>
+			<item value="order"/>
+			<item value="sent"/>
+			<item value="send"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Authority"/>
+			<item value="Registration"/>
+			<item value=""/>
+			<item value="&amp;nbsp;"/>
+			<item value="width:"/>
+			<item value="Inspection Done"/>
+			<item value="Inspection"/>
+			<item value="feeBean.get(0)"/>
+			<item value="&quot;login&quot;"/>
+			<item value="login"/>
+			<item value="index"/>
+			<item value="span"/>
+			<item value="&quot;&quot;"/>
+			<item value="locality"/>
+			<item value="fatherName"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1029"/>
+		<item key="DIALOG_Y_ORIGIN" value="346"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="390"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

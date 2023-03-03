@@ -1,0 +1,353 @@
+<section id="site-content">
+<section id="main-content">
+			<section class="wrapper">
+			<section class="panel" style="background-color: #999">
+				<header class="panel-heading"> Edit Head Registration Details</header>
+				<div class="panel-body">
+					<div class="position-center">
+						<form method="POST" action="edit-head-data" class="cmxform form-horizontal" name="headBean" id="testingDataForm" onsubmit="return validateTestingDataForm()" >
+
+							<div class="panel-body">
+								<div class=" form">
+<input type="hidden" id="did" value="${user.districtBean.districtCode}">
+<input type="hidden" id="uid" value="${user.ulbBean.ulbId}">
+<input type="hidden" id="lid" value="${user.localityBean.localityCode}">
+
+<input type="hidden" id="occ" value="${user.occupation}">
+<input type="hidden" id="edu" value="${user.eduQualification}">
+
+<input type="hidden" id="headId" name="headId" value="${user.headId}">
+
+
+<input type="hidden" id="dis" value="${user.disease}">
+
+
+
+									<div class="form-group required">
+										<label for="cname" class="control-label col-lg-4">Name Of Head of the family
+										
+										
+										</label>
+										<div class="col-lg-8">
+										<input class="form-control" type="text"  name="headName" id="tfname"  value="${user.headName}">
+										</div>
+									</div>
+
+									<div class="form-group required">
+										<label for="cemail" class="control-label col-lg-4">Age</label>
+										<div class="col-lg-8">
+											<input class="form-control" type="number" name="age" id="tfage" value="${user.age}">
+										</div>
+									</div>
+																		
+										<div class="form-group required"> 
+									 		<label for="curl" class="control-label col-lg-4">District</label> 
+									 		<div class="col-lg-8">
+                                       <select class="myselect ggg" id='tfdistrict' name="districtBean" onchange="loadUlb();" ></select>
+									 		</div>
+									 	</div>
+									 	
+									 	<div class="form-group required"> 
+									 		<label for="curl" class="control-label col-lg-4">Town Name</label> 
+									 		<div class="col-lg-8">
+                                       <select class="myselect ggg" id='tfulb' name="ulbBean" onchange="loadLocality()" value="${user.ulbBean.ulbId}"></select>
+									 		</div>
+									 	</div>
+									 	
+									 	<div class="form-group required"> 
+									 		<label for="curl" class="control-label col-lg-4">Locality/Area/Mohalla</label> 
+									 		<div class="col-lg-8">
+                                       <select class="myselect ggg" id='tflocality' name="localityBean" value="${user.localityBean.localityCode}"></select>
+									 		</div>
+									 	</div>
+
+
+									
+										<div class="form-group required"> 
+									 		<label for="curl" class="control-label col-lg-4">Disease(if any)</label> 
+									 		<div class="col-lg-8">
+											<table>
+									 		<tr>
+									 		<td><input type="checkbox"  id="TB" name="disease" value="TB"><span>TB</span></td>
+									 		<td><input type="checkbox"  name="disease" id="Heart Disease" value="Heart Disease">Heart Disease</td></tr>
+									 		
+									 		<tr>
+									 		<td><input type="checkbox"  name="disease" id="Kidney Malfunction" value="Kidney Malfunction">Kidney Malfunction</td>
+									 		<td><input type="checkbox" name="disease" id="Stomach Disease etc." value="Stomach Disease etc.">Stomach Disease etc. </td>
+
+									 		</tr>
+									 			<tr>
+									 		<td><input type="checkbox"  name="disease" id="BP" value="BP">BP</td>
+									 		<td><input type="checkbox" name="disease" id="Diabetes" value="Diabetes">Diabetes</td>
+
+									 		</tr>
+									 		<tr>
+									 		<td><input type="checkbox"  name="disease" id="Stroke" value="Stroke">Stroke</td>
+									 		<td><input type="checkbox" name="disease" id="Cancer" value="Cancer">Cancer</td>
+
+									 		</tr>
+									 		
+									 		<tr>
+									 		<td><input type="checkbox" id="Others" name="disease" value="Others">Other</td>
+									 		<td><input type="text" name="diseaseOther" id="diseaseOther" value="${user.diseaseOther}"></td></tr>
+									 		</table>
+										</div>
+									</div>
+									 	
+									 	</div>
+									 	
+									 			<div class="form-group required">
+										<label for="cemail" class="control-label col-lg-4">Educational Qualification</label>
+										<div class="col-lg-8">
+												<select class=" form-control" name="eduQualification" id="tfedu" >
+									 				<option value="">SELECT</option>
+									 				<option value="Under graduate">Under Graduate</option>
+									 				<option value="Post graduate">Post Graduate</option>
+									 				<option value="Matriculation">Matriculation</option>
+									 				<option value="Senior Secondary">Senior Secondary</option>
+									 				<option value="Diploma">Diploma</option>
+									 				<option value="PHD">PHD</option>						 				
+									 				</select> 
+										</div>
+									</div>
+
+									<div class="form-group required">
+										<label for="curl" class="control-label col-lg-4">Occupation</label>
+										<div class="col-lg-8">
+									<select class=" form-control" name="occupation" id="tfoccu">
+									 				<option value="">SELECT</option>
+									 				<option value="Farmer">Under Graduate</option>
+									 				<option value="Shopkeeper">Post Graduate</option>
+									 				<option value="Labourer">Matriculation</option>
+									 				<option value="Rehri wala">Rehri wala</option>
+									 				<option value="Driver">Driver</option>
+									 				<option value="Cobbler">Cobbler</option>	
+									 				<option value="Others">Others</option>						 				
+									 									 				
+									 				</select> 					
+										</div>
+									</div>
+									
+								 									
+									<div class="form-group required">
+										<label for="ccomment" class="control-label col-lg-4">No of family Members</label>
+										<div class="col-lg-8">
+											<input class="form-control " name="noOfFamilyMembers" id="tfnumber" value="${user.noOfFamilyMembers}"></input>
+										</div>
+									</div>		 	
+									 	
+																		 	</div>
+									
+									<span style="color: red; font-size: 16px; font-weight: 786;"
+										id="testingErrorMsg">${testingErrorMsg}</span>
+										<div style="float: right;">
+									 <button type="submit" class="btn btn-info">Submit</button>
+                                <button class="btn btn-danger" type="reset" id="resetFormDataBtn">Cancel</button>
+                                </div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			</section>
+			</section>
+			</section>
+			
+			 <script type="text/javascript">
+            $(".myselect").select2();
+            $(document).ready(function () {
+            	var district=$('#did').val();
+            	var ulb=$('#uid').val();
+            	var locality=$('#lid').val();
+            	var edu=$('#edu').val();
+            	var occ=$('#occ').val();
+            	
+
+            	$.ajax({
+            	    url: "get-district",
+            	    type: 'GET',
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    async:false,
+            	    success: function (responce)
+            	    {
+            	    	var htm = "<option value=''> Select District</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	            	 if(item.districtCode==district)
+            	            		 {
+            	                 	htm = htm +' <option value='+item.districtCode+' selected>'+item.districtName+'</option>';
+
+            	            		 }
+            	            	 else
+            	htm = htm +' <option value='+item.districtCode+'>'+item.districtName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tfdistrict').html(htm);  
+            	             }      
+            	});
+            	
+            	
+            	loaduid(district,ulb);
+            	loadlid(ulb,locality);
+            	
+            	var options= document.getElementById('tfedu').options;
+            	var n= options.length;
+            	for (var i= 0; i<n; i++) {
+            	    if (options[i].value==edu) {
+            	        options[i].selected= true;
+            	        break;
+            	    }
+            	}
+            	
+            	var option= document.getElementById('tfoccu').options;
+            	var m= option.length;
+            	for (var i= 0; i<m; i++) {
+            	    if (option[i].value==occ) {
+            	        option[i].selected= true;
+            	        break;
+            	    }
+            	}
+            	
+            	var dis=$('#dis').val();
+            	var str=dis.replace("[", "").replace("]", "");
+            	var d=str.split(",");
+            	var size=d.length;
+            	debugger;
+            	for(var i=0;i<size;i++)
+            	{
+            		var ii=d[i].trim();
+            		if(ii=="TB" || ii=="Heart Disease" || ii=="Kidney Malfunction" || ii=="Stomach Disease etc." || ii=="Others" || ii=="BP" || ii=="Stroke" || ii=="Diabetes" || ii=="Cancer")
+            		{
+            		document.getElementById(ii).checked = true;
+            		}
+            		else
+            			{            		
+            			document.getElementById('Others').checked = true;
+            			$('#diseaseOther').val(ii);
+
+            			
+            			}
+            		
+            	}
+            	
+            });
+            
+            	function loaduid(district,uid)
+            	{
+            	
+                $.ajax({
+            	    url: "get-ulb",
+            	    type: 'GET',
+            	    data:{"district":district},
+            	    datatype:"json",
+            	    async:false,
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	var htm = "<option value=''> Select Town Name</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {     
+            	            	 
+            	            	 if(item.ulbId==uid)
+            	            		 {
+            	                 	htm = htm +' <option value='+item.ulbId+' selected>'+item.ulbName+'</option>';
+
+            	            		 }
+            	            	 else
+            	htm = htm +' <option value='+item.ulbId+'>'+item.ulbName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tfulb').html(htm);  
+            	             }      
+            	});
+            	}
+                
+              function loadlid(ulb,lid)
+              {
+                $.ajax({
+            	    url: "get-locality",
+            	    type: 'GET',
+            	    data:{"ulb":ulb},
+            	    datatype:"json",
+            	    async:false,
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	 var htm = "<option value=''> Select Locality</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	            	 if(item.localityCode==lid)
+        	            		 {
+        	                 	htm = htm +' <option value='+item.localityCode+' selected>'+item.localityName+'</option>';
+
+        	            		 }
+        	            	 else
+        	            		 {
+        	htm = htm +' <option value='+item.localityCode+'>'+item.localityName+'</option>';}
+            	             });
+            	             htm = htm;
+            	             $('#tflocality').html(htm);  
+            	             }      
+            	});
+              }
+        
+   
+            
+                     
+            function loadUlb()
+            {
+            	  var district= $('#tfdistrict').val();
+                $.ajax({
+            	    url: "get-ulb",
+            	    type: 'GET',
+            	    data:{"district":district},
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	var htm = "<option value=''> Select Town Name</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	htm = htm +' <option value='+item.ulbId+'>'+item.ulbName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tfulb').html(htm);  
+            	             }      
+            	});
+       	
+            	
+            }
+            
+            
+            function loadLocality()
+            {
+            	  var ulb= $('#tfulb').val();
+                $.ajax({
+            	    url: "get-locality",
+            	    type: 'GET',
+            	    data:{"ulb":ulb},
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	            	    	var htm = "<option value=''> Select Locality</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {     
+            	            	            	htm = htm +' <option value='+item.localityCode+'>'+item.localityName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tflocality').html(htm);  
+            	             }      
+            	});
+            }
+               	
+            	
+           
+        </script>

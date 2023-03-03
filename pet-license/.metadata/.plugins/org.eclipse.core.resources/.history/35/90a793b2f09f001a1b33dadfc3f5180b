@@ -1,0 +1,221 @@
+<section id="site-content">
+<section id="main-content">
+			<section class="wrapper">
+			<section class="panel" style="background-color: #999">
+				<header class="panel-heading"> Family Members Registration form </header>
+				<div class="panel-body">
+					<div class="position-center">
+					<div id="buttonForm"><span style="color: green; font-size: 16px; font-weight: 786;"
+										id="testingErrorMsg">${testingErrorMsg}</span>
+										
+										<div id="buttonss"><button id="addMembers" onclick="loadData()"> Add Members</button></div>
+										<div id="buttoncc"><button id="addotherhead" onclick="loadForm()">Go to Home</button></div></div>
+										<div id="dataform" style="display:none">
+						<form method="POST" action="family-data" class="cmxform form-horizontal" name="familyBean" id="testingDataForm" onsubmit="return validateTestingDataForm()" >
+
+<input type="hidden" id="headId" name="headId" value="${headId}">
+<input type="hidden" id="usersType" name="usersType" value="${usersType}">
+<input type="hidden" id="noOfFamilyMembers" name="noOfFamilyMembers" value="${noOfFamilyMembers}">
+							<div class="panel-body">
+								<div class=" form">
+
+									<div class="form-group required">
+										<label for="cname" class="control-label col-lg-4">Name Of Member
+										
+										
+										</label>
+										<div class="col-lg-8">
+										<input class="form-control" type="text"  name="name" id="tfname">
+										</div>
+									</div>
+
+									<div class="form-group required">
+										<label for="cemail" class="control-label col-lg-4">Age</label>
+										<div class="col-lg-8">
+											<input class="form-control" type="number" name="age" id="tfage">
+										</div>
+									</div>
+																		
+										<div class="form-group required"> 
+									 		<label for="curl" class="control-label col-lg-4">Disease(if any)</label> 
+									 		<div class="col-lg-8">
+											<table>
+									 		<tr>
+									 		<td><input type="checkbox"  name="disease" value="TB"><span>TB</span></td>
+									 		<td><input type="checkbox"  name="disease" value="Heart Disease">Heart Disease</td></tr>
+									 		
+									 		<tr>
+									 		<td><input type="checkbox"  name="disease" value="Kidney Malfunction">Kidney Malfunction</td>
+									 		<td><input type="checkbox" name="disease" value="Stomach Disease etc.">Stomach Disease etc. </td>
+
+									 		</tr>
+									 			<tr>
+									 		<td><input type="checkbox"  name="disease" id="disease" value="BP">BP</td>
+									 		<td><input type="checkbox" name="disease" id="disease" value="Diabetes">Diabetes</td>
+
+									 		</tr>
+									 		<tr>
+									 		<td><input type="checkbox"  name="disease" id="disease" value="Stroke">Stroke</td>
+									 		<td><input type="checkbox" name="disease" id="disease" value="Cancer">Cancer</td>
+
+									 		</tr>
+									 		
+									 		<tr>
+									 		<td><input type="checkbox" name="disease" value="Others">Other </td>
+									 		<td><input type="text" name="diseaseOther"></td></tr>
+									 		</table>
+										</div>
+									</div>
+									 	
+									 
+									 			<div class="form-group required">
+										<label for="cemail" class="control-label col-lg-4">Educational Qualification</label>
+										<div class="col-lg-8">
+												<select class=" form-control" name="eduQualification" id="tfedu">
+									 				<option value="">SELECT</option>
+									 				<option value="Under graduate">Under Graduate</option>
+									 				<option value="Post graduate">Post Graduate</option>
+									 				<option value="Matriculation">Matriculation</option>
+									 				<option value="Senior Secondary">Senior Secondary</option>
+									 				<option value="Diploma">Diploma</option>
+									 				<option value="PHD">PHD</option>						 				
+									 				</select> 
+										</div>
+									</div>
+
+									<div class="form-group required">
+										<label for="curl" class="control-label col-lg-4">Occupation</label>
+										<div class="col-lg-8">
+<select class=" form-control" name="occupation" id="tfoccu">
+									 				<option value="">SELECT</option>
+									 				<option value="Farmer">Under Graduate</option>
+									 				<option value="Shopkeeper">Post Graduate</option>
+									 				<option value="Labourer">Matriculation</option>
+									 				<option value="Rehri wala">Rehri wala</option>
+									 				<option value="Driver">Driver</option>
+									 				<option value="Cobbler">Cobbler</option>	
+									 				<option value="Others">Others</option>						 				
+									 									 				
+									 				</select> 													</div>
+									</div>
+									
+								 	</div>
+									
+																			<div style="float: right;">
+									 <button type="submit" class="btn btn-info">Submit</button>
+                                <button class="btn btn-danger" type="reset" id="resetFormDataBtn">Cancel</button>
+                                </div>
+								</div>
+								 	
+						</form>
+					</div>
+					</div>
+					
+				</div>
+			</section>
+			</section>
+			</section>
+			</section>
+			
+			 <script type="text/javascript">
+            $(".myselect").select2();
+            $(document).ready(function () {
+            	if($('#noOfFamilyMembers').val()<=0)
+            		{
+            		debugger;
+                	document.getElementById('buttonss').style.display='none';
+
+                	document.getElementById('buttoncc').style.display='block';
+            		}
+            	else
+            		{document.getElementById('buttonss').style.display='block';
+
+                	document.getElementById('buttoncc').style.display='none';}
+            	
+            	
+            	
+            	   	$.ajax({
+            	    url: "get-district",
+            	    type: 'GET',
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	var htm = "<option value=''> Select District</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	htm = htm +' <option value='+item.districtCode+'>'+item.districtName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tfdistrict').html(htm);  
+            	             }      
+            	});
+});
+          
+                     
+            function loadUlb()
+            {
+            	  var district= $('#tfdistrict').val();
+                $.ajax({
+            	    url: "get-ulb",
+            	    type: 'GET',
+            	    data:{"district":district},
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	var htm = "<option value=''> Select Town Name</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	htm = htm +' <option value='+item.ulbId+'>'+item.ulbName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tfulb').html(htm);  
+            	             }      
+            	});
+       	
+            	
+            }
+            
+            
+            function loadLocality()
+            {
+            	  var ulb= $('#tfulb').val();
+                $.ajax({
+            	    url: "get-locality",
+            	    type: 'GET',
+            	    data:{"ulb":ulb},
+            	    datatype:"json",
+            	    contentType: "application/json; charset=utf-8",
+            	    success: function (responce)
+            	    {
+            	    	debugger;
+            	    	var htm = "<option value=''> Select Locality</option>";
+            	    	 var data = JSON.stringify(responce);
+            	         	var obj = JSON.parse(data);
+            	             $.each(obj, function(index,item) {        
+            	htm = htm +' <option value='+item.localityCode+'>'+item.localityName+'</option>';
+            	             });
+            	             htm = htm;
+            	             $('#tflocality').html(htm);  
+            	             }      
+            	});
+            }
+            
+            function loadData()
+            {
+            	document.getElementById('dataform').style.display='block';
+            	document.getElementById('buttonForm').style.display='none';
+}
+
+            function loadForm()
+            
+            {	window.location="/covid-new/dashboard";
+            	
+            
+            }
+            	
+           
+        </script>

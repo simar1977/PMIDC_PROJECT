@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;approve-pet.jsp&apos; to &apos;approve-pet.jsp&apos;&#x0D;&#x0A;- Original project: &apos;pet-license&apos;&#x0D;&#x0A;- Destination element: &apos;approve-pet.jsp&apos;&#x0D;&#x0A;- Original element: &apos;approve-pet.jsp&apos;" description="Copy file" element1="src/main/webapp/WEB-INF/views/pages/approve-pet.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1638161242346" target="/pet-license/src/main/webapp/WEB-INF/views/pages/approve-pet.jsp" units="0" version="1.0"/>
+</session>

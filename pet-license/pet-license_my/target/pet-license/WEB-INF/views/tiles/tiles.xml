@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+
+<tiles-definitions>  
+ 
+   <!-- Base Definition -->
+   <definition name="base-definition" 
+       template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
+       <put-attribute name="title" value="" />  
+     
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultMenu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition>  
+ 
+   <!-- Home Page -->
+   <definition name="dashboard" extends="base-definition">  
+       <put-attribute name="title" value="dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/dashboard.jsp" />  
+   </definition>  
+   
+   
+   <definition name="report" extends="base-definition">  
+       <put-attribute name="title" value="report" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/report.jsp" />  
+   </definition>  
+   
+    <definition name="reset-password" extends="loginlogout">  
+       <put-attribute name="title" value="reset-password" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/reset-password.jsp" />  
+   </definition>  
+   
+   
+   <definition name="edit-profile" extends="base-definition">  
+       <put-attribute name="title" value="edit-profile" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/edit-profile.jsp" />  
+   </definition>  
+   
+ 
+
+   <definition name="loginlogout" 
+       template="/WEB-INF/views/tiles/layouts/loginlogoutLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="body" value="" />  
+   </definition> 
+   
+   <definition name="login" extends="loginlogout">  
+       <put-attribute name="title" value="login" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
+   </definition> 
+   
+     <definition name="register" extends="loginlogout">  
+       <put-attribute name="title" value="login" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/register.jsp" />  
+   </definition>   
+
+   <definition name="registration-form" extends="base-definition">  
+       <put-attribute name="title" value="registration-form" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/registration-form.jsp" />  
+   </definition>
+   
+   
+   <definition name="ccavRequestHandler" extends="base-definition">  
+       <put-attribute name="title" value="ccavRequestHandler" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/ccavRequestHandler.jsp" />  
+   </definition>
+   
+   <definition name="ccavResponseHandler" extends="base-definition">  
+       <put-attribute name="title" value="ccavResponseHandler" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/ccavResponseHandler.jsp" />  
+   </definition>
+   
+   
+   <definition name="payment-success" extends="base-definition">  
+       <put-attribute name="title" value="payment-success" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/payment-success.jsp" />  
+   </definition>
+   
+   <definition name="collect-fee" extends="base-definition">  
+       <put-attribute name="title" value="collect-fee" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/collect-fee.jsp" />  
+   </definition>
+   
+   <definition name="collect-fee-online" extends="base-definition">  
+       <put-attribute name="title" value="collect-fee-online" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/collect-fee-online.jsp" />  
+   </definition>
+   
+    <definition name="view-details" extends="base-definition">  
+       <put-attribute name="title" value="view-details" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/view-details.jsp" />  
+   </definition>
+    <definition name="download-pet-license" extends="base-definition">  
+       <put-attribute name="title" value="download-pet-license" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/download-pet-license.jsp" />  
+   </definition>
+   
+     <definition name="collect-fee-search" extends="base-definition">  
+       <put-attribute name="title" value="collect-fee-search" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/collect-fee-search.jsp" />  
+   </definition>
+   
+     <definition name="collect-fee-online-search" extends="base-definition">  
+       <put-attribute name="title" value="collect-fee-online-search" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/collect-fee-online-search.jsp" />  
+   </definition>
+    <definition name="payment-fail" extends="base-definition">  
+       <put-attribute name="title" value="payment-fail" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/payment-fail.jsp" />  
+   </definition>
+     <definition name="test-form" extends="base-definition">  
+       <put-attribute name="title" value="test-form" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/test-form.jsp" />  
+   </definition>
+   
+   <definition name="citizen-form" extends="base-definition">  
+       <put-attribute name="title" value="head-form" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/head-form.jsp" />  
+   </definition> 
+   
+      <definition name="edit-details" extends="base-definition">  
+       <put-attribute name="title" value="edit-details" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/edit-details.jsp" />  
+   </definition> 
+   
+    <definition name="family-details" extends="base-definition">  
+       <put-attribute name="title" value="family-details"/>  
+       <put-attribute name="body" value="/WEB-INF/views/pages/family-details.jsp" />  
+   </definition> 
+   
+   <definition name="report-fee" extends="base-definition">  
+       <put-attribute name="title" value="report-fee" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/report-fee.jsp" />  
+   </definition> 
+   
+    <definition name="approve-pet" extends="base-definition">  
+       <put-attribute name="title" value="approve-pet" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/approve-pet.jsp" />  
+   </definition>  
+    <definition name="approve-success" extends="base-definition">  
+       <put-attribute name="title" value="approve-success" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/approve-success.jsp" />  
+   </definition>  
+   
+   
+   <definition name="testing-data-report" extends="base-definition">  
+       <put-attribute name="title" value="testing-data-report" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/testing-data-report.jsp" />  
+   </definition>  
+   
+    <definition name="covid-patients-admission-report" extends="base-definition">  
+       <put-attribute name="title" value="covid-patients-admission-report" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/covid-patients-admission-report.jsp" />  
+   </definition> 
+   
+      <definition name="covid-patient-data" extends="base-definition">  
+       <put-attribute name="title" value="covid-patient-data" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/covid-patient-data.jsp" />  
+   </definition>   
+   
+
+ 
+</tiles-definitions>

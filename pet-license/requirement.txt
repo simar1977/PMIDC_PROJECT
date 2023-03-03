@@ -1,0 +1,22 @@
+Usertype 0
+
+admin 
+
+can view report of all
+can edit details
+
+clerk
+can apply
+can collect fee
+can check status of all
+can print the pet license
+
+
+citizen
+can apply n pay
+
+eo
+can approve n view
+
+cd /home
+
