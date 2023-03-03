@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;pet-license/src/main/webapp/WEB-INF/views/pages/pet-license.jsp&apos; to &apos;download-pet-license.jsp&apos;" description="Rename resource &apos;pet-license.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/pages/pet-license.jsp" name="download-pet-license.jsp" stamp="1596603323889" updateReferences="true"/>
-</session>
